@@ -1,0 +1,29 @@
+<div id=header>
+  <span class = "header title">{{title}}</span> is the best
+  <div class="action_button" (click)="addTrip()">Add Trip</div>
+</div>
+
+<div id="content">
+  <div *ngIf="!adding_trip">
+    <div class="trip" *ngFor="let trip of trips">
+      {{trip.title}}
+    </div>
+  </div>
+
+  <div id="add_trip_dialog" *ngIf="adding_trip">
+      <div>
+        <p>Trip Title:</p>
+        <input id="add_trip_dialog_input" [(ngModel)]="newTrip.title" type="text">
+      </div>
+      <div>
+        <div class="action_button" (click)="doAddTrip()">OK</div>
+        <div class="action_button" (click)="cancelAddTrip()">CANCEL</div>
+      </div>
+  </div>
+</div> 
+
+<div id=footer>
+  This is my footer
+
+</div>
+ 
